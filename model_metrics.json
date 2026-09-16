@@ -1,0 +1,27 @@
+{
+  "accuracy": 0.9945715558005895,
+  "precision_phishing": 0.996512728540826,
+  "recall_phishing": 0.9907870622616276,
+  "f1_phishing": 0.9936416472107694,
+  "phishing_label": 0,
+  "legitimate_label": 1,
+  "features": [
+    "URLLength",
+    "DomainLength",
+    "IsDomainIP",
+    "NoOfSubDomain",
+    "NoOfLettersInURL",
+    "NoOfDegitsInURL",
+    "NoOfEqualsInURL",
+    "NoOfQMarkInURL",
+    "NoOfAmpersandInURL",
+    "NoOfOtherSpecialCharsInURL",
+    "IsHTTPS",
+    "TLDLength",
+    "NoOfObfuscatedChar",
+    "ObfuscationRatio",
+    "LetterRatioInURL",
+    "DegitRatioInURL",
+    "SpacialCharRatioInURL"
+  ]
+}

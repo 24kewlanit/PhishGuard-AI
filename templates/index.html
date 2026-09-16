@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<div class="glow glow-one"></div>
+<div class="glow glow-two"></div>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡
+        </div>
+
+        <div>
+
+            <div class="brand-name">
+                PHISH<span>GUARD</span>
+            </div>
+
+            <div class="brand-subtitle">
+                AI SECURITY SYSTEM
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        <span>
+            AI ENGINE ACTIVE
+        </span>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN -->
+
+<main class="main-container">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="badge">
+
+        <span>✦</span>
+
+        MACHINE LEARNING POWERED
+
+    </div>
+
+
+    <h1>
+
+        Detect Phishing.
+        <br>
+
+        <span>Stay Protected.</span>
+
+    </h1>
+
+
+    <p class="hero-text">
+
+        Analyze suspicious URLs using machine learning
+        and website behavior analysis to detect potential
+        phishing threats in seconds.
+
+    </p>
+
+</section>
+
+
+
+<!-- SCANNER -->
+
+<section class="scanner-card">
+
+    <div class="scanner-header">
+
+        <div>
+
+            <div class="section-label">
+                URL SECURITY SCANNER
+            </div>
+
+            <div class="section-description">
+                Enter a website URL to analyze its security.
+            </div>
+
+        </div>
+
+
+        <div class="live-indicator">
+
+            <span></span>
+
+            LIVE
+
+        </div>
+
+    </div>
+
+
+    <div class="url-input-container">
+
+        <div class="url-icon">
+            🔗
+        </div>
+
+
+        <input
+            type="text"
+            id="urlInput"
+            placeholder="https://example.com"
+            autocomplete="off"
+        >
+
+
+        <button
+            type="button"
+            id="scanButton"
+            onclick="scanURL()">
+
+            <span id="buttonText">
+                SCAN URL
+            </span>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <div id="errorMessage"
+         class="error-message">
+    </div>
+
+
+
+    <!-- SCANNING -->
+
+    <div id="scanning"
+         class="scanning hidden">
+
+        <div class="scanner-animation">
+
+            <div class="scanner-ring"></div>
+
+            <div class="scanner-core">
+                🛡
+            </div>
+
+        </div>
+
+
+        <div class="scanning-title">
+            ANALYZING URL
+        </div>
+
+
+        <div id="scanningText"
+             class="scanning-text">
+
+            Extracting URL features...
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div id="progressBar"
+                 class="progress-bar">
+            </div>
+
+        </div>
+
+
+        <div id="progressText"
+             class="progress-text">
+
+            0%
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- RESULTS -->
+
+<section id="resultSection"
+         class="result-section hidden">
+
+
+<!-- RESULT CARD -->
+
+<div id="resultCard"
+     class="result-card">
+
+
+    <div class="result-icon"
+         id="resultIcon">
+
+        ✓
+
+    </div>
+
+
+    <div class="result-info">
+
+        <div id="resultLabel"
+             class="result-label">
+
+            LEGITIMATE
+
+        </div>
+
+
+        <div id="resultDescription"
+             class="result-description">
+
+            This URL appears to be legitimate.
+
+        </div>
+
+
+        <div id="scannedURL"
+             class="scanned-url">
+
+        </div>
+
+    </div>
+
+
+    <div id="resultBadge"
+         class="result-badge">
+
+        SAFE
+
+    </div>
+
+</div>
+
+
+
+<!-- ANALYSIS GRID -->
+
+<div class="analysis-grid">
+
+
+<!-- THREAT ANALYSIS -->
+
+<div class="probability-card">
+
+    <div class="card-heading">
+
+        <span>
+            THREAT ANALYSIS
+        </span>
+
+        <span>
+            MODEL OUTPUT
+        </span>
+
+    </div>
+
+
+    <div class="probability-content">
+
+
+        <div class="circle-container">
+
+            <div id="riskCircle"
+                 class="risk-circle">
+
+                <div class="circle-inner">
+
+                    <strong id="riskPercentage">
+                        0%
+                    </strong>
+
+                    <span>
+                        FINAL RISK
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="probability-bars">
+
+
+            <div class="probability-row">
+
+                <div class="probability-title">
+
+                    <span class="legend-dot danger"></span>
+
+                    Phishing Risk
+
+                </div>
+
+
+                <div id="phishingProbability"
+                     class="probability-value">
+
+                    0%
+
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div id="phishingBar"
+                     class="bar-fill danger-fill">
+                </div>
+
+            </div>
+
+
+
+            <div class="probability-row">
+
+                <div class="probability-title">
+
+                    <span class="legend-dot safe"></span>
+
+                    Legitimate
+
+                </div>
+
+
+                <div id="legitimateProbability"
+                     class="probability-value">
+
+                    0%
+
+                </div>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div id="legitimateBar"
+                     class="bar-fill safe-fill">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- URL FEATURES -->
+
+<div class="features-card">
+
+    <div class="card-heading">
+
+        <span>
+            URL ANALYSIS
+        </span>
+
+        <span id="featureCount"
+              class="feature-count">
+
+            17 FEATURES
+
+        </span>
+
+    </div>
+
+
+    <div id="featuresGrid"
+         class="features-grid">
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- WEBSITE ANALYSIS -->
+
+<div class="website-analysis-card">
+
+    <div class="card-heading">
+
+        <span>
+            WEBSITE ANALYSIS
+        </span>
+
+        <span class="feature-count">
+            LIVE BROWSER INSPECTION
+        </span>
+
+    </div>
+
+
+    <div class="website-stats">
+
+
+        <div class="website-stat">
+
+            <span>
+                Page Title
+            </span>
+
+            <strong id="pageTitle">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Forms
+            </span>
+
+            <strong id="formCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Input Fields
+            </span>
+
+            <strong id="inputCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Username / Email
+            </span>
+
+            <strong id="usernameCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Password Fields
+            </span>
+
+            <strong id="passwordCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                OTP Fields
+            </span>
+
+            <strong id="otpCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                External Forms
+            </span>
+
+            <strong id="externalFormCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Redirects
+            </span>
+
+            <strong id="redirectCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                Total Links
+            </span>
+
+            <strong id="linkCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                External Links
+            </span>
+
+            <strong id="externalLinkCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                External Iframes
+            </span>
+
+            <strong id="externalIframeCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="website-stat">
+
+            <span>
+                External Scripts
+            </span>
+
+            <strong id="externalScriptCount">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOAD ERROR NOTICE -->
+
+    <div id="loadErrorNotice"
+         class="load-error-notice hidden">
+    </div>
+
+
+    <!-- SCREENSHOT -->
+
+    <div id="screenshotSection"
+         class="website-section hidden">
+
+        <div class="website-section-title">
+            LIVE SCREENSHOT
+        </div>
+
+        <div class="screenshot-frame">
+
+            <img id="screenshotImage"
+                 src=""
+                 alt="Website screenshot">
+
+        </div>
+
+    </div>
+
+
+    <!-- REDIRECT CHAIN -->
+
+    <div id="redirectSection"
+         class="website-section hidden">
+
+        <div class="website-section-title">
+            REDIRECT CHAIN
+        </div>
+
+        <div id="redirectChain"
+             class="redirect-chain">
+        </div>
+
+    </div>
+
+
+    <!-- SECURITY TERMS -->
+
+    <div class="website-section">
+
+        <div class="website-section-title">
+            SECURITY TERMS DETECTED
+        </div>
+
+        <div id="suspiciousKeywords"
+             class="keyword-list">
+
+            None detected
+
+        </div>
+
+    </div>
+
+
+    <!-- WHY THIS RESULT -->
+
+    <div class="website-section">
+
+        <div class="website-section-title">
+            WHY THIS RESULT
+        </div>
+
+        <div id="riskReasons"
+             class="risk-reasons">
+
+            No major suspicious indicators detected.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- SCAN AGAIN -->
+
+<button
+    type="button"
+    class="scan-again"
+    onclick="resetScanner()">
+
+    ↻ SCAN ANOTHER URL
+
+</button>
+
+
+</section>
+
+
+
+<!-- SCAN HISTORY -->
+
+<section class="history-card">
+
+    <div class="card-heading">
+
+        <span>
+            RECENT SCANS
+        </span>
+
+        <span class="feature-count">
+            THIS SESSION
+        </span>
+
+    </div>
+
+    <div id="historyList"
+         class="history-list">
+
+        <div class="history-empty">
+            No scans yet. Run your first scan above.
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        PHISHGUARD AI
+    </div>
+
+    <div>
+        URL-BASED MACHINE LEARNING DETECTION
+    </div>
+
+    <div>
+        MODEL STATUS:
+        <span>ONLINE</span>
+    </div>
+
+</footer>
+
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
