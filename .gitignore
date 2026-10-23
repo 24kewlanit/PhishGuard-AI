@@ -5,4 +5,8 @@ venv/
 env/
 .env
 .vscode/
-.idea/
+.idea/.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

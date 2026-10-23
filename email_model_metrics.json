@@ -1,0 +1,47 @@
+{
+  "classes": [
+    "phishing",
+    "safe",
+    "spam"
+  ],
+  "train_rows": 8416,
+  "test_rows": 2104,
+  "rows_per_class": {
+    "safe": 4620,
+    "phishing": 3200,
+    "spam": 2700
+  },
+  "report": {
+    "phishing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 640.0
+    },
+    "safe": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 924.0
+    },
+    "spam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 540.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2104.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2104.0
+    }
+  }
+}

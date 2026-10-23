@@ -1,0 +1,219 @@
+/* =========================================================
+   EMAIL + PDF SECURITY SCANNER  (new - separate from style.css)
+   Re-uses the colour variables defined in style.css
+========================================================= */
+
+.ep-section { margin-top: 28px; }
+
+.ep-jump {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    color: var(--cyan);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.ep-jump:hover { background: rgba(0, 229, 255, 0.08); }
+
+.ep-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.ep-box {
+    background: #080c14;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.ep-box-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 4px;
+}
+.ep-box-help { color: var(--muted); font-size: 11px; margin-bottom: 14px; line-height: 1.5; }
+
+.ep-or {
+    text-align: center;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 12px 0;
+}
+
+.ep-file {
+    width: 100%;
+    color: #cbd5e1;
+    font-size: 12px;
+    padding: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+}
+.ep-file::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 229, 255, 0.14);
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.ep-textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    font-family: inherit;
+    padding: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+.ep-textarea:focus { border-color: rgba(0, 229, 255, 0.45); }
+
+.ep-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+
+.ep-btn {
+    border: none;
+    cursor: pointer;
+    padding: 15px 24px;
+    border-radius: 10px;
+    background: var(--cyan);
+    color: #001014;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.25s;
+}
+.ep-btn:hover { transform: translateY(-1px); box-shadow: 0 0 25px rgba(0, 229, 255, 0.35); }
+.ep-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+.ep-btn.secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ep-error { color: var(--red); font-size: 12px; margin-top: 12px; min-height: 16px; }
+
+.ep-loading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 600;
+}
+.ep-spinner {
+    width: 18px; height: 18px;
+    border: 2px solid rgba(0, 229, 255, 0.25);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: ep-spin 0.8s linear infinite;
+}
+@keyframes ep-spin { to { transform: rotate(360deg); } }
+
+/* ---------- results ---------- */
+.ep-results { margin-top: 26px; display: grid; gap: 18px; }
+
+.ep-overall {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid var(--ep-color, var(--border));
+    background: rgba(255, 255, 255, 0.025);
+}
+.ep-overall-label { font-size: 11px; letter-spacing: 1.5px; color: var(--muted); font-weight: 800; }
+.ep-overall-class {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--ep-color);
+    margin-top: 4px;
+}
+.ep-score { text-align: right; }
+.ep-score strong { font-size: 34px; font-family: "Space Grotesk", sans-serif; color: var(--ep-color); }
+.ep-score span { color: var(--muted); font-size: 13px; }
+.ep-meter { height: 8px; background: rgba(255,255,255,0.07); border-radius: 99px; overflow: hidden; margin-top: 8px; min-width: 160px; }
+.ep-meter > div { height: 100%; background: var(--ep-color); border-radius: 99px; }
+
+.ep-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ep-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    min-width: 0;
+}
+.ep-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+.ep-card-title { font-size: 11px; font-weight: 800; letter-spacing: 1.3px; }
+
+.ep-badge {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--ep-color);
+    border: 1px solid var(--ep-color);
+    background: rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+}
+
+/* status colours */
+.ep-safe       { --ep-color: var(--green); }
+.ep-spam       { --ep-color: var(--amber); }
+.ep-suspicious { --ep-color: #ff8a3d; }
+.ep-phishing   { --ep-color: var(--red); }
+.ep-malicious  { --ep-color: var(--red); }
+.ep-unknown    { --ep-color: var(--muted); }
+.ep-inconclusive { --ep-color: #7aa2ff; }
+
+.ep-rows { display: grid; gap: 9px; margin-bottom: 14px; }
+.ep-row { display: flex; justify-content: space-between; gap: 14px; font-size: 12px; }
+.ep-row > span:first-child { color: var(--muted); flex: 0 0 auto; }
+.ep-row > span:last-child { text-align: right; word-break: break-word; min-width: 0; }
+
+.ep-sub { font-size: 10px; font-weight: 800; letter-spacing: 1.2px; color: var(--muted); margin: 14px 0 8px; }
+.ep-list { display: grid; gap: 7px; }
+.ep-item {
+    padding: 9px 11px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    font-size: 11px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+.ep-item.url { font-family: ui-monospace, Consolas, monospace; font-size: 10.5px; }
+.ep-none { color: var(--muted); font-size: 11px; }
+.ep-note { color: var(--amber); font-size: 11px; margin-top: 10px; line-height: 1.5; }
+.ep-method { color: var(--muted); font-size: 10px; margin-top: 12px; line-height: 1.5; }
+.ep-overall-reasons { padding: 20px; }
+
+@media (max-width: 800px) {
+    .ep-inputs, .ep-cards { grid-template-columns: 1fr; }
+    .ep-score { text-align: left; }
+}

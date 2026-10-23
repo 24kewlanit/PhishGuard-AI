@@ -11,7 +11,14 @@ from feature_extractor import extract_features, normalize_url
 from risk_engine import calculate_risk_score, is_trusted_domain
 from web_analyzer import analyze_website
 
+# --- NEW: Email + PDF scanner (separate module, does not touch the URL scanner) ---
+from email_pdf_routes import email_pdf_bp
+
 app = Flask(__name__)
+
+# NEW: hard cap on any request body (largest allowed upload is the 10 MB PDF).
+app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
+app.register_blueprint(email_pdf_bp)   # adds POST /email-pdf-scan
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "phishing_model.pkl")

@@ -10,6 +10,10 @@
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 
+    <!-- NEW: Email + PDF scanner styles -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='email_pdf.css') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -100,6 +104,10 @@
         phishing threats in seconds.
 
     </p>
+
+    <a class="ep-jump" href="#emailPdfScanner">
+        ✉ NEW: EMAIL + PDF SECURITY SCANNER ↓
+    </a>
 
 </section>
 
@@ -736,6 +744,102 @@
 
 
 
+<!-- =====================================================
+     NEW: EMAIL + PDF SECURITY SCANNER
+     (separate from the URL scanner above)
+====================================================== -->
+
+<section class="scanner-card ep-section" id="emailPdfScanner">
+
+    <div class="scanner-header">
+
+        <div>
+
+            <div class="section-label">
+                EMAIL + PDF SECURITY SCANNER
+            </div>
+
+            <div class="section-description">
+                Check an email and its PDF attachment together. Files are analysed
+                statically - nothing is executed, opened or sent to third parties.
+            </div>
+
+        </div>
+
+        <div class="live-indicator">
+            <span></span>
+            STATIC ANALYSIS
+        </div>
+
+    </div>
+
+
+    <div class="ep-inputs">
+
+        <!-- EMAIL INPUT -->
+        <div class="ep-box">
+
+            <div class="ep-box-title">1 · EMAIL</div>
+
+            <div class="ep-box-help">
+                Upload a .eml file (max 5 MB) <strong>or</strong> paste the email.
+                If both are given, the file is used.
+            </div>
+
+            <input type="file" id="epEmailFile" class="ep-file"
+                   accept=".eml,message/rfc822">
+
+            <div class="ep-or">— OR —</div>
+
+            <textarea id="epEmailText" class="ep-textarea"
+                      placeholder="Paste the email here. Including headers (From:, Subject:) gives the best analysis."></textarea>
+
+        </div>
+
+        <!-- PDF INPUT -->
+        <div class="ep-box">
+
+            <div class="ep-box-title">2 · PDF ATTACHMENT</div>
+
+            <div class="ep-box-help">
+                Upload the PDF attachment separately (max 10 MB, optional).
+                It is parsed for static inspection only and the temporary
+                server copy is deleted right after the scan.
+            </div>
+
+            <input type="file" id="epPdfFile" class="ep-file"
+                   accept=".pdf,application/pdf">
+
+        </div>
+
+    </div>
+
+
+    <div class="ep-actions">
+
+        <button type="button" id="epAnalyze" class="ep-btn">
+            ANALYZE EMAIL + PDF
+        </button>
+
+        <button type="button" id="epClear" class="ep-btn secondary">
+            CLEAR
+        </button>
+
+    </div>
+
+    <div id="epError" class="ep-error"></div>
+
+    <div id="epLoading" class="ep-loading hidden">
+        <div class="ep-spinner"></div>
+        <span>Analyzing email and PDF safely...</span>
+    </div>
+
+    <div id="epResults" class="ep-results hidden"></div>
+
+</section>
+
+
+
 <!-- FOOTER -->
 
 <footer>
@@ -760,6 +864,7 @@
 
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='email_pdf.js') }}"></script>
 
 </body>
 

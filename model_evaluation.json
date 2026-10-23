@@ -1,0 +1,558 @@
+{
+  "note": "Synthetic training data. Numbers below are NOT real-world accuracy.",
+  "email_leave_one_family_out": {
+    "phishing/bank_kyc": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    },
+    "phishing/bec": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.0938,
+      "exact_class": 0.0938
+    },
+    "phishing/credentials": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.9781,
+      "exact_class": 0.9781
+    },
+    "phishing/delivery": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.75,
+      "exact_class": 0.75
+    },
+    "phishing/gov_refund": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.9531,
+      "exact_class": 0.9531
+    },
+    "phishing/invoice": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.7188,
+      "exact_class": 0.7188
+    },
+    "phishing/job_scam": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.9938,
+      "exact_class": 0.8812
+    },
+    "phishing/malware": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.9969,
+      "exact_class": 0.9969
+    },
+    "phishing/shared_doc": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.7188,
+      "exact_class": 0.7188
+    },
+    "phishing/subscription": {
+      "n": 320,
+      "metric": "recall(not safe)",
+      "value": 0.8156,
+      "exact_class": 0.8156
+    },
+    "safe/billing_notice_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/dev_notifications": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 0.4881
+    },
+    "safe/finance_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 0.7905
+    },
+    "safe/it_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/newsletter_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 0.9857
+    },
+    "safe/orders_real": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 0.6119
+    },
+    "safe/personal": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/product_update_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/school": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/shipping_legit": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "safe/workplace": {
+      "n": 420,
+      "metric": "specificity",
+      "value": 1.0
+    },
+    "spam/casino": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 0.9967,
+      "exact_class": 0.9967
+    },
+    "spam/lottery": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 0.99,
+      "exact_class": 0.96
+    },
+    "spam/mkt_course": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    },
+    "spam/mkt_retail": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    },
+    "spam/mkt_saas": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    },
+    "spam/mkt_travel_finance": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    },
+    "spam/money": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 0.5133,
+      "exact_class": 0.4133
+    },
+    "spam/pharma": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 0.98,
+      "exact_class": 0.9767
+    },
+    "spam/promo": {
+      "n": 300,
+      "metric": "recall(not safe)",
+      "value": 1.0,
+      "exact_class": 1.0
+    }
+  },
+  "email_independent": {
+    "rules_only": {
+      "legit_total": 19,
+      "legit_not_safe(false_alarms)": 0,
+      "phish_total": 21,
+      "phish_missed(safe/spam/inconclusive)": 0,
+      "phish_flagged_as_PHISHING": 9,
+      "legit_labels": [
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE"
+      ],
+      "phish_labels": [
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "PHISHING"
+      ]
+    },
+    "rules_plus_ml": {
+      "legit_total": 19,
+      "legit_not_safe(false_alarms)": 0,
+      "phish_total": 21,
+      "phish_missed(safe/spam/inconclusive)": 0,
+      "phish_flagged_as_PHISHING": 12,
+      "legit_labels": [
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE"
+      ],
+      "phish_labels": [
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "SUSPICIOUS",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "SUSPICIOUS",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING"
+      ]
+    },
+    "ml_only": {
+      "legit_not_safe": 0,
+      "legit_total": 19,
+      "phish_missed": 4,
+      "phish_total": 21,
+      "legit_labels": [
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE"
+      ],
+      "phish_labels": [
+        "PHISHING",
+        "PHISHING",
+        "SAFE",
+        "PHISHING",
+        "SAFE",
+        "SAFE",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "SAFE",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING",
+        "PHISHING"
+      ]
+    }
+  },
+  "pdf_leave_one_family_out": {
+    "mal/exe_embedded": {
+      "n": 46,
+      "true": "malicious",
+      "exact_class": 1.0,
+      "flagged_not_safe": 1.0
+    },
+    "mal/launch": {
+      "n": 40,
+      "true": "malicious",
+      "exact_class": 0.0,
+      "flagged_not_safe": 1.0
+    },
+    "mal/obfuscated": {
+      "n": 42,
+      "true": "malicious",
+      "exact_class": 1.0,
+      "flagged_not_safe": 1.0
+    },
+    "mal/objstm": {
+      "n": 46,
+      "true": "malicious",
+      "exact_class": 1.0,
+      "flagged_not_safe": 1.0
+    },
+    "mal/openaction_js": {
+      "n": 35,
+      "true": "malicious",
+      "exact_class": 1.0,
+      "flagged_not_safe": 1.0
+    },
+    "mal/phish_lookalike": {
+      "n": 51,
+      "true": "malicious",
+      "exact_class": 0.9608,
+      "flagged_not_safe": 1.0
+    },
+    "mal/phish_text": {
+      "n": 40,
+      "true": "malicious",
+      "exact_class": 0.925,
+      "flagged_not_safe": 0.925
+    },
+    "safe/form": {
+      "n": 90,
+      "true": "safe",
+      "exact_class": 0.0,
+      "flagged_not_safe": 1.0
+    },
+    "safe/links": {
+      "n": 92,
+      "true": "safe",
+      "exact_class": 0.0,
+      "flagged_not_safe": 1.0
+    },
+    "safe/long": {
+      "n": 98,
+      "true": "safe",
+      "exact_class": 1.0,
+      "flagged_not_safe": 0.0
+    },
+    "safe/plain": {
+      "n": 80,
+      "true": "safe",
+      "exact_class": 1.0,
+      "flagged_not_safe": 0.0
+    },
+    "susp/embedded": {
+      "n": 28,
+      "true": "suspicious",
+      "exact_class": 0.1071,
+      "flagged_not_safe": 0.1071
+    },
+    "susp/ip": {
+      "n": 27,
+      "true": "suspicious",
+      "exact_class": 0.3704,
+      "flagged_not_safe": 0.3704
+    },
+    "susp/js_only": {
+      "n": 26,
+      "true": "suspicious",
+      "exact_class": 0.0,
+      "flagged_not_safe": 1.0
+    },
+    "susp/lookalike": {
+      "n": 27,
+      "true": "suspicious",
+      "exact_class": 0.0741,
+      "flagged_not_safe": 0.0741
+    },
+    "susp/password_form": {
+      "n": 35,
+      "true": "suspicious",
+      "exact_class": 0.0,
+      "flagged_not_safe": 0.0
+    },
+    "susp/shortener": {
+      "n": 37,
+      "true": "suspicious",
+      "exact_class": 0.4324,
+      "flagged_not_safe": 0.4595
+    },
+    "susp/submit": {
+      "n": 28,
+      "true": "suspicious",
+      "exact_class": 0.0357,
+      "flagged_not_safe": 0.0357
+    },
+    "susp/tld": {
+      "n": 32,
+      "true": "suspicious",
+      "exact_class": 0.25,
+      "flagged_not_safe": 0.25
+    }
+  },
+  "pdf_independent": {
+    "rules_only": {
+      "safe_pdfs_labels": [
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE"
+      ],
+      "bad_pdfs": [
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ]
+      ]
+    },
+    "rules_plus_ml": {
+      "safe_pdfs_labels": [
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE",
+        "SAFE"
+      ],
+      "bad_pdfs": [
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "malicious",
+          "POTENTIALLY MALICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ],
+        [
+          "suspicious",
+          "SUSPICIOUS"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "classes": [
+    "malicious",
+    "safe",
+    "suspicious"
+  ],
+  "samples": {
+    "safe": 360,
+    "malicious": 300,
+    "suspicious": 240
+  },
+  "report": {
+    "malicious": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 60.0
+    },
+    "safe": {
+      "precision": 0.9452054794520548,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.9517241379310345,
+      "support": 72.0
+    },
+    "suspicious": {
+      "precision": 0.9361702127659575,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.9263157894736842,
+      "support": 48.0
+    },
+    "accuracy": 0.9611111111111111,
+    "macro avg": {
+      "precision": 0.9604585640726707,
+      "recall": 0.9583333333333334,
+      "f1-score": 0.9593466424682395,
+      "support": 180.0
+    },
+    "weighted avg": {
+      "precision": 0.9610609151850772,
+      "recall": 0.9611111111111111,
+      "f1-score": 0.9610405323653962,
+      "support": 180.0
+    }
+  }
+}
